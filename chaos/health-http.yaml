@@ -18,10 +18,8 @@ steady-state-hypothesis:
     provider:
       type: http
       timeout: 3
-      verify_tls: false
-      url: http://${ingress_host}/demo/person
-      headers:
-        Host: go-demo-8.acme.com
+      verify_tls: true
+      url: https://${ingress_host}/demo/person
 method:
 - type: action
   name: terminate-app-pod
