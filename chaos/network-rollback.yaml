@@ -20,8 +20,6 @@ steady-state-hypothesis:
       timeout: 5
       verify_tls: false
       url: http://${ingress_host}?addr=http://go-demo-8
-      headers:
-        Host: repeater.acme.com
   - type: probe
     tolerance: 200
     ref: app-responds-to-requests
