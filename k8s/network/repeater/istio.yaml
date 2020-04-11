@@ -6,7 +6,7 @@ metadata:
   name: repeater
 spec:
   hosts:
-  - repeater.acme.com
+  - repeater.cluster.prageethw.co
   - repeater
   gateways:
   - repeater
@@ -43,7 +43,15 @@ spec:
   servers:
   - port:
       number: 80
-      name: http
+      name: http-go-demo-8
       protocol: HTTP
     hosts:
-    - repeater.acme.com
+    - repeater.cluster.prageethw.co
+    tls:
+      httpsRedirect: true
+  - port:
+      number: 443
+      name: https-go-demo-8
+      protocol: HTTP #need to set this as http to enable elb ssl offloading.   
+    hosts:
+    - repeater.cluster.prageethw.co
